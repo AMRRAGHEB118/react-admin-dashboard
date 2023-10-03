@@ -1,9 +1,9 @@
-import { Toolbar } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar } from '../styledComponent/AppBar';
-import { Search, SearchIconWrapper, StyledInputBase } from '../styledComponent/Search';
-import SearchIcon from '@mui/icons-material/Search';
+import Search from './Search';
+import NavigationIcons from './NavigationIcons';
 
 // eslint-disable-next-line react/prop-types
 export default function TopBar({ open, handleDrawerOpen }) {
@@ -24,15 +24,9 @@ export default function TopBar({ open, handleDrawerOpen }) {
         >
           <MenuIcon />
         </IconButton>
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
+        <Search />
+        <Box flexGrow={1}/>
+        <NavigationIcons />
       </Toolbar>
     </AppBar>
   )
